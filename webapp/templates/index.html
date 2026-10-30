@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SentiScope – Sentiment & Emotion Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">◎</span> SentiScope</div>
+  <nav class="tabs">
+    <button class="tab active" data-tab="analyze">Analyze Text</button>
+    <button class="tab" data-tab="batch">Batch / CSV</button>
+    <button class="tab" data-tab="insights">App Review Insights</button>
+    <button class="tab" data-tab="explorer">Review Explorer</button>
+    <button class="tab" data-tab="model">Model Performance</button>
+  </nav>
+</header>
+
+<main>
+  <!-- ANALYZE -->
+  <section id="analyze" class="panel active">
+    <div class="hero">
+      <h1>Understand how people feel</h1>
+      <p id="heroText">Transformer models (RoBERTa sentiment, DistilRoBERTa emotion) compared side by side with
+        the original lexicon tools (VADER, AFINN) and the TF-IDF + Logistic Regression emotion classifier.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <label for="inputText" class="label">Your text</label>
+        <textarea id="inputText" rows="7" placeholder="e.g. The new update keeps crashing and I lost all my tasks. So frustrating!"></textarea>
+        <div class="row">
+          <button id="analyzeBtn" class="btn primary">Analyze</button>
+          <span class="muted small">Ctrl + Enter</span>
+        </div>
+        <div class="examples">
+          <span class="muted small">Try:</span>
+          <button class="chip" data-example="I absolutely love this app, it keeps my whole day organised!">Happy user</button>
+          <button class="chip" data-example="The sync stopped working and I lost all my notes. This is unacceptable, I want a refund.">Angry customer</button>
+          <button class="chip" data-example="I feel so lonely and hopeless lately, nothing seems to help.">Sad message</button>
+          <button class="chip" data-example="I'm nervous about the exam tomorrow and scared I will fail.">Anxious</button>
+          <button class="chip" data-example="Wow, I did not expect that at all, I am amazed by the result!">Surprised</button>
+        </div>
+      </div>
+      <div class="card" id="resultCard">
+        <div id="resultEmpty" class="empty">Results will appear here.</div>
+        <div id="resultBody" class="hidden">
+          <div class="result-head">
+            <div class="big-emoji" id="resEmoji"></div>
+            <div>
+              <div class="muted small">Detected emotion</div>
+              <div class="result-title" id="resEmotion"></div>
+              <div class="muted small" id="resConf"></div>
+            </div>
+            <div class="badge" id="resSentiment"></div>
+          </div>
+          <div class="gauge">
+            <div class="gauge-track"><div class="gauge-marker" id="gaugeMarker"></div></div>
+            <div class="gauge-labels"><span>Negative</span><span>Neutral</span><span>Positive</span></div>
+            <div class="muted small center">Sentiment score: <b id="resScore"></b> (<span id="resSource"></span>)</div>
+          </div>
+          <h4>Model comparison</h4>
+          <div id="compareRows"></div>
+          <h4>Emotion probabilities</h4>
+          <div id="emotionBars"></div>
+          <h4 id="sentBarsTitle">Sentiment probabilities</h4>
+          <div id="sentBars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BATCH -->
+  <section id="batch" class="panel">
+    <div class="grid two">
+      <div class="card">
+        <h3>Upload a CSV</h3>
+        <p class="muted small">Customer reviews, survey answers, support tickets, tweets… The text column is
+          detected automatically (text / content / review / comment …), or name it below.</p>
+        <input type="file" id="csvFile" accept=".csv">
+        <input type="text" id="csvColumn" placeholder="Text column (optional)">
+        <h3>…or paste lines</h3>
+        <textarea id="batchText" rows="6" placeholder="One text per line"></textarea>
+        <label class="check"><input type="checkbox" id="fastMode">
+          Fast mode: lexicon + classic model, up to 5,000 rows (transformer mode: up to 1,000 rows, slower but more accurate)</label>
+        <div class="row">
+          <button id="batchBtn" class="btn primary">Run batch analysis</button>
+          <button id="downloadBtn" class="btn" disabled>Download results CSV</button>
+        </div>
+        <div id="batchStatus" class="muted small"></div>
+      </div>
+      <div class="card">
+        <h3>Summary</h3>
+        <div id="batchKpis" class="kpis"></div>
+        <div class="grid two tight">
+          <div><canvas id="batchSentChart" height="220"></canvas></div>
+          <div><canvas id="batchEmoChart" height="220"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row between">
+        <h3>Results</h3>
+        <select id="batchFilter">
+          <option value="">All</option>
+          <option value="positive">Positive</option>
+          <option value="neutral">Neutral</option>
+          <option value="negative">Negative</option>
+        </select>
+      </div>
+      <div class="table-wrap"><table id="batchTable"><thead><tr>
+        <th>Text</th><th>Sentiment</th><th>Score</th><th>VADER</th><th>Emotion</th><th>Confidence</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section id="insights" class="panel">
+    <div id="insightKpis" class="kpis"></div>
+    <div class="grid two">
+      <div class="card"><h3>Overall sentiment</h3><canvas id="sentPie" height="240"></canvas></div>
+      <div class="card"><h3>Emotions in reviews</h3><canvas id="emoBar" height="240"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>App ranking by average sentiment</h3>
+      <p class="muted small">Stacked share of positive / neutral / negative reviews for 15 productivity apps on Google Play.</p>
+      <canvas id="appChart" height="140"></canvas>
+    </div>
+    <div class="grid two">
+      <div class="card"><h3>Sentiment trend (quarterly)</h3><canvas id="trendChart" height="220"></canvas></div>
+      <div class="card"><h3>Sentiment score distribution</h3><canvas id="histChart" height="220"></canvas></div>
+    </div>
+    <div class="grid two">
+      <div class="card"><h3>What happy users talk about</h3><div id="posWords" class="cloud"></div></div>
+      <div class="card"><h3>What unhappy users complain about</h3><div id="negWords" class="cloud neg"></div></div>
+    </div>
+    <div class="card">
+      <h3>App comparison table</h3>
+      <div class="table-wrap"><table id="appTable"><thead><tr>
+        <th>App</th><th>Reviews</th><th>Avg score</th><th>% Positive</th><th>% Negative</th><th>Dev reply rate</th><th>Top emotion</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- EXPLORER -->
+  <section id="explorer" class="panel">
+    <div class="card filters">
+      <select id="fApp"><option value="">All apps</option></select>
+      <select id="fSent"><option value="">Any sentiment</option><option>positive</option><option>neutral</option><option>negative</option></select>
+      <select id="fEmo"><option value="">Any emotion</option></select>
+      <select id="fSort">
+        <option value="helpful">Most helpful</option>
+        <option value="most_negative">Most negative</option>
+        <option value="most_positive">Most positive</option>
+      </select>
+      <input id="fQuery" type="search" placeholder="Search keyword (e.g. sync, crash, widget)">
+      <button id="fBtn" class="btn primary">Search</button>
+    </div>
+    <div id="reviewCount" class="muted small"></div>
+    <div id="reviewList"></div>
+    <div class="row center">
+      <button id="prevPage" class="btn">‹ Prev</button>
+      <span id="pageInfo" class="muted small"></span>
+      <button id="nextPage" class="btn">Next ›</button>
+    </div>
+  </section>
+
+  <!-- MODEL -->
+  <section id="model" class="panel">
+    <div id="comparisonSection" class="hidden">
+      <div class="card">
+        <h3>Classic vs transformer models</h3>
+        <p class="muted small" id="comparisonNote"></p>
+        <div class="grid two tight">
+          <div><canvas id="cmpEmotionChart" height="220"></canvas></div>
+          <div><canvas id="cmpSentimentChart" height="220"></canvas></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Review-style spot check</h3>
+        <div class="table-wrap"><table id="spotTable"><thead><tr>
+          <th>Text</th><th>Expected emotion</th><th>Transformer</th><th>Classic</th><th>Expected sentiment</th><th>RoBERTa</th><th>VADER</th>
+        </tr></thead><tbody></tbody></table></div>
+      </div>
+      <h3 class="section-title">Classic TF-IDF model (baseline) details</h3>
+    </div>
+    <div id="modelKpis" class="kpis"></div>
+    <div class="grid two">
+      <div class="card"><h3>Per-emotion precision / recall / F1 (test set)</h3><canvas id="f1Chart" height="240"></canvas></div>
+      <div class="card"><h3>Training data distribution</h3><canvas id="distChart" height="240"></canvas></div>
+    </div>
+    <div class="grid two">
+      <div class="card"><h3>Confusion matrix (test set)</h3><div id="cm"></div></div>
+      <div class="card"><h3>Most indicative words per emotion</h3><div id="topWords"></div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="muted small">Built from <code>PreProc_lexicon_based.ipynb</code> and <code>text_classification.ipynb</code>.</footer>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

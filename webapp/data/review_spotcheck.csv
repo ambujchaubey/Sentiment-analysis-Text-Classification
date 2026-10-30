@@ -1,0 +1,47 @@
+text,emotion,sentiment
+"The sync stopped working and I lost all my notes. This is unacceptable!",anger,negative
+"Third update in a row that breaks reminders. Fix your app, I'm sick of it.",anger,negative
+"They locked basic features behind a paywall after I paid for lifetime. Absolute scam.",anger,negative
+"Ads every five seconds. Ridiculous, uninstalling right now.",anger,negative
+"Support never answered my emails. Terrible way to treat paying customers.",anger,negative
+"Why on earth would you remove the widget? Stupid decision by the developers.",anger,negative
+"I'm furious, the app deleted my entire task list without any warning.",anger,negative
+"Notifications don't work at all and the devs keep ignoring this bug. Pathetic.",anger,negative
+"I used to love this app but it's not the same anymore, really disappointed.",sadness,negative
+"Sad to see my favourite planner get worse with every release.",sadness,negative
+"I lost two years of habit streaks after the update. Heartbroken.",sadness,negative
+"It was so helpful before, now I barely open it. Such a shame.",sadness,negative
+"Unfortunately I have to leave this app, it just doesn't fit my life anymore.",sadness,negative
+"Missing the old design so much, the new one makes me feel lost.",sadness,negative
+"My tree died because the timer glitched and I feel awful about it.",sadness,negative
+"I wanted this to work so badly, but it keeps letting me down.",sadness,negative
+"Best to-do app I've ever used, it keeps my whole day organised!",joy,positive
+"Absolutely love the new calendar view, great job team!",joy,positive
+"This app made me so productive, I finally finish my tasks every day.",joy,positive
+"Clean design, fast sync, and the widgets are perfect. Very happy.",joy,positive
+"Worth every penny. Planning my week is actually fun now.",joy,positive
+"So glad I found this, my habits have never been better.",joy,positive
+"Excellent app, simple and reliable. Highly recommend it.",joy,positive
+"Five stars, it just works and looks beautiful.",joy,positive
+"I'm worried the app will lose my data again, it already happened once.",fear,negative
+"Scared to update because last time it wiped all my reminders.",fear,negative
+"I'm anxious every time it asks for more permissions, what are you doing with my data?",fear,negative
+"Nervous that I'll miss important meetings since alarms are unreliable.",fear,negative
+"I'm afraid the subscription will renew without warning like it did for my friend.",fear,negative
+"Terrified of losing my notes, there is no proper backup option.",fear,negative
+"Worried about privacy, the app now tracks my location for no reason.",fear,negative
+"I panic whenever sync shows an error before an exam deadline.",fear,negative
+"Wow, I did not expect a free app to be this powerful!",surprise,positive
+"I was shocked to see how much the new version improved.",surprise,positive
+"Didn't expect the dark mode to look this good, what a surprise.",surprise,positive
+"Whoa, the AI scheduling actually works, I'm amazed.",surprise,positive
+"Surprisingly the free version has everything I need.",surprise,positive
+"I can't believe it suddenly started charging me with no notice!",surprise,negative
+"Wait, where did all my projects go? They just vanished after the update.",surprise,negative
+"Unexpectedly, the app moved all buttons around overnight.",surprise,negative
+"I use it mostly for grocery lists and recurring tasks.",neutral,neutral
+"The app has a calendar, task list and a habit tracker.",neutral,neutral
+"Version 4.2 adds a new widget and changes the settings menu.",neutral,neutral
+"I installed it yesterday, will update the review after a week.",neutral,neutral
+"It syncs with Google Calendar through the integrations page.",neutral,neutral
+"Okay app. Does what it says.",neutral,neutral

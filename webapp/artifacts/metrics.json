@@ -1,0 +1,649 @@
+{
+  "model": "TF-IDF + Logistic Regression (C=10, balanced)",
+  "baseline_notebook": {
+    "train": 0.9309,
+    "validation": 0.8231,
+    "test": 0.8309
+  },
+  "accuracy": {
+    "train": 0.9896428571428572,
+    "validation": 0.875625,
+    "test": 0.8834375
+  },
+  "split_sizes": {
+    "train": 11200,
+    "validation": 1600,
+    "test": 3200
+  },
+  "report": {
+    "sadness": {
+      "precision": 0.9324473975636767,
+      "recall": 0.902465166130761,
+      "f1-score": 0.9172113289760349,
+      "support": 933.0
+    },
+    "joy": {
+      "precision": 0.9108159392789373,
+      "recall": 0.8955223880597015,
+      "f1-score": 0.90310442144873,
+      "support": 1072.0
+    },
+    "love": {
+      "precision": 0.759581881533101,
+      "recall": 0.8352490421455939,
+      "f1-score": 0.7956204379562044,
+      "support": 261.0
+    },
+    "anger": {
+      "precision": 0.8693693693693694,
+      "recall": 0.8935185185185185,
+      "f1-score": 0.8812785388127854,
+      "support": 432.0
+    },
+    "fear": {
+      "precision": 0.841025641025641,
+      "recall": 0.8475452196382429,
+      "f1-score": 0.8442728442728443,
+      "support": 387.0
+    },
+    "surprise": {
+      "precision": 0.7622950819672131,
+      "recall": 0.808695652173913,
+      "f1-score": 0.7848101265822784,
+      "support": 115.0
+    }
+  },
+  "macro_f1": 0.8543829496748129,
+  "confusion_matrix": [
+    [
+      842,
+      40,
+      5,
+      25,
+      18,
+      3
+    ],
+    [
+      24,
+      960,
+      57,
+      12,
+      11,
+      8
+    ],
+    [
+      1,
+      36,
+      218,
+      2,
+      4,
+      0
+    ],
+    [
+      20,
+      9,
+      2,
+      386,
+      14,
+      1
+    ],
+    [
+      16,
+      7,
+      2,
+      17,
+      328,
+      17
+    ],
+    [
+      0,
+      2,
+      3,
+      2,
+      15,
+      93
+    ]
+  ],
+  "labels": [
+    "sadness",
+    "joy",
+    "love",
+    "anger",
+    "fear",
+    "surprise"
+  ],
+  "distribution": {
+    "sadness": 4666,
+    "joy": 5362,
+    "love": 1304,
+    "anger": 2159,
+    "fear": 1937,
+    "surprise": 572
+  },
+  "top_words": {
+    "sadness": [
+      "disturbed",
+      "punished",
+      "lethargic",
+      "unfortunate",
+      "regretful",
+      "melancholy",
+      "troubled",
+      "lousy",
+      "vain",
+      "unwelcome",
+      "discontent",
+      "missed"
+    ],
+    "joy": [
+      "satisfied",
+      "sincere",
+      "resolved",
+      "innocent",
+      "superior",
+      "convinced",
+      "respected",
+      "super",
+      "pleasant",
+      "assured",
+      "clever",
+      "productive"
+    ],
+    "love": [
+      "sympathetic",
+      "nostalgic",
+      "longing",
+      "fond",
+      "naughty",
+      "caring",
+      "loyal",
+      "horny",
+      "loving",
+      "romantic",
+      "delicate",
+      "supportive"
+    ],
+    "anger": [
+      "offended",
+      "resentful",
+      "greedy",
+      "distracted",
+      "dangerous",
+      "rude",
+      "dissatisfied",
+      "insulted",
+      "irritable",
+      "rushed",
+      "rebellious",
+      "fucked"
+    ],
+    "fear": [
+      "pressured",
+      "terrified",
+      "shaken",
+      "vulnerable",
+      "paranoid",
+      "unsure",
+      "reluctant",
+      "uncertain",
+      "threatened",
+      "shy",
+      "apprehensive",
+      "shaky"
+    ],
+    "surprise": [
+      "impressed",
+      "amazed",
+      "curious",
+      "funny",
+      "shocked",
+      "surprised",
+      "dazed",
+      "amazing",
+      "stunned",
+      "overwhelmed",
+      "weird",
+      "strange"
+    ]
+  },
+  "comparison": {
+    "spotcheck": {
+      "size": 46,
+      "emotion_size": 40,
+      "emotion_accuracy": {
+        "transformer": 0.775,
+        "classic": 0.5
+      },
+      "sentiment_accuracy": {
+        "roberta": 0.9565217391304348,
+        "vader": 0.8478260869565217,
+        "afinn": 0.8478260869565217
+      },
+      "examples": [
+        {
+          "text": "The sync stopped working and I lost all my notes. This is unacceptable!",
+          "emotion": "anger",
+          "ai_emotion": "anger",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Third update in a row that breaks reminders. Fix your app, I'm sick of it.",
+          "emotion": "anger",
+          "ai_emotion": "disgust",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "They locked basic features behind a paywall after I paid for lifetime. Absolute scam.",
+          "emotion": "anger",
+          "ai_emotion": "disgust",
+          "classic_emotion": "joy",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Ads every five seconds. Ridiculous, uninstalling right now.",
+          "emotion": "anger",
+          "ai_emotion": "fear",
+          "classic_emotion": "joy",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Support never answered my emails. Terrible way to treat paying customers.",
+          "emotion": "anger",
+          "ai_emotion": "disgust",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "positive"
+        },
+        {
+          "text": "Why on earth would you remove the widget? Stupid decision by the developers.",
+          "emotion": "anger",
+          "ai_emotion": "anger",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "I'm furious, the app deleted my entire task list without any warning.",
+          "emotion": "anger",
+          "ai_emotion": "anger",
+          "classic_emotion": "anger",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Notifications don't work at all and the devs keep ignoring this bug. Pathetic.",
+          "emotion": "anger",
+          "ai_emotion": "disgust",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "I used to love this app but it's not the same anymore, really disappointed.",
+          "emotion": "sadness",
+          "ai_emotion": "sadness",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Sad to see my favourite planner get worse with every release.",
+          "emotion": "sadness",
+          "ai_emotion": "sadness",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "I lost two years of habit streaks after the update. Heartbroken.",
+          "emotion": "sadness",
+          "ai_emotion": "sadness",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "It was so helpful before, now I barely open it. Such a shame.",
+          "emotion": "sadness",
+          "ai_emotion": "disgust",
+          "classic_emotion": "joy",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "positive"
+        },
+        {
+          "text": "Unfortunately I have to leave this app, it just doesn't fit my life anymore.",
+          "emotion": "sadness",
+          "ai_emotion": "sadness",
+          "classic_emotion": "anger",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Missing the old design so much, the new one makes me feel lost.",
+          "emotion": "sadness",
+          "ai_emotion": "sadness",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "My tree died because the timer glitched and I feel awful about it.",
+          "emotion": "sadness",
+          "ai_emotion": "sadness",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "I wanted this to work so badly, but it keeps letting me down.",
+          "emotion": "sadness",
+          "ai_emotion": "sadness",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Best to-do app I've ever used, it keeps my whole day organised!",
+          "emotion": "joy",
+          "ai_emotion": "joy",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "Absolutely love the new calendar view, great job team!",
+          "emotion": "joy",
+          "ai_emotion": "joy",
+          "classic_emotion": "sadness",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "This app made me so productive, I finally finish my tasks every day.",
+          "emotion": "joy",
+          "ai_emotion": "joy",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "neutral"
+        },
+        {
+          "text": "Clean design, fast sync, and the widgets are perfect. Very happy.",
+          "emotion": "joy",
+          "ai_emotion": "joy",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "Worth every penny. Planning my week is actually fun now.",
+          "emotion": "joy",
+          "ai_emotion": "joy",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "So glad I found this, my habits have never been better.",
+          "emotion": "joy",
+          "ai_emotion": "joy",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "Excellent app, simple and reliable. Highly recommend it.",
+          "emotion": "joy",
+          "ai_emotion": "joy",
+          "classic_emotion": "sadness",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "Five stars, it just works and looks beautiful.",
+          "emotion": "joy",
+          "ai_emotion": "neutral",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "I'm worried the app will lose my data again, it already happened once.",
+          "emotion": "fear",
+          "ai_emotion": "fear",
+          "classic_emotion": "joy",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Scared to update because last time it wiped all my reminders.",
+          "emotion": "fear",
+          "ai_emotion": "fear",
+          "classic_emotion": "fear",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "I'm anxious every time it asks for more permissions, what are you doing with my data?",
+          "emotion": "fear",
+          "ai_emotion": "fear",
+          "classic_emotion": "fear",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Nervous that I'll miss important meetings since alarms are unreliable.",
+          "emotion": "fear",
+          "ai_emotion": "fear",
+          "classic_emotion": "fear",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "I'm afraid the subscription will renew without warning like it did for my friend.",
+          "emotion": "fear",
+          "ai_emotion": "fear",
+          "classic_emotion": "fear",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "positive"
+        },
+        {
+          "text": "Terrified of losing my notes, there is no proper backup option.",
+          "emotion": "fear",
+          "ai_emotion": "fear",
+          "classic_emotion": "fear",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Worried about privacy, the app now tracks my location for no reason.",
+          "emotion": "fear",
+          "ai_emotion": "anger",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "I panic whenever sync shows an error before an exam deadline.",
+          "emotion": "fear",
+          "ai_emotion": "fear",
+          "classic_emotion": "joy",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Wow, I did not expect a free app to be this powerful!",
+          "emotion": "surprise",
+          "ai_emotion": "surprise",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "I was shocked to see how much the new version improved.",
+          "emotion": "surprise",
+          "ai_emotion": "surprise",
+          "classic_emotion": "surprise",
+          "sentiment": "positive",
+          "roberta": "negative",
+          "vader": "positive"
+        },
+        {
+          "text": "Didn't expect the dark mode to look this good, what a surprise.",
+          "emotion": "surprise",
+          "ai_emotion": "surprise",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "Whoa, the AI scheduling actually works, I'm amazed.",
+          "emotion": "surprise",
+          "ai_emotion": "surprise",
+          "classic_emotion": "surprise",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "Surprisingly the free version has everything I need.",
+          "emotion": "surprise",
+          "ai_emotion": "surprise",
+          "classic_emotion": "joy",
+          "sentiment": "positive",
+          "roberta": "positive",
+          "vader": "positive"
+        },
+        {
+          "text": "I can't believe it suddenly started charging me with no notice!",
+          "emotion": "surprise",
+          "ai_emotion": "surprise",
+          "classic_emotion": "sadness",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "negative"
+        },
+        {
+          "text": "Wait, where did all my projects go? They just vanished after the update.",
+          "emotion": "surprise",
+          "ai_emotion": "neutral",
+          "classic_emotion": "joy",
+          "sentiment": "negative",
+          "roberta": "negative",
+          "vader": "neutral"
+        },
+        {
+          "text": "Unexpectedly, the app moved all buttons around overnight.",
+          "emotion": "surprise",
+          "ai_emotion": "surprise",
+          "classic_emotion": "joy",
+          "sentiment": "negative",
+          "roberta": "neutral",
+          "vader": "neutral"
+        },
+        {
+          "text": "I use it mostly for grocery lists and recurring tasks.",
+          "emotion": "neutral",
+          "ai_emotion": "neutral",
+          "classic_emotion": "sadness",
+          "sentiment": "neutral",
+          "roberta": "neutral",
+          "vader": "neutral"
+        },
+        {
+          "text": "The app has a calendar, task list and a habit tracker.",
+          "emotion": "neutral",
+          "ai_emotion": "neutral",
+          "classic_emotion": "sadness",
+          "sentiment": "neutral",
+          "roberta": "neutral",
+          "vader": "neutral"
+        },
+        {
+          "text": "Version 4.2 adds a new widget and changes the settings menu.",
+          "emotion": "neutral",
+          "ai_emotion": "neutral",
+          "classic_emotion": "joy",
+          "sentiment": "neutral",
+          "roberta": "neutral",
+          "vader": "neutral"
+        },
+        {
+          "text": "I installed it yesterday, will update the review after a week.",
+          "emotion": "neutral",
+          "ai_emotion": "neutral",
+          "classic_emotion": "sadness",
+          "sentiment": "neutral",
+          "roberta": "neutral",
+          "vader": "neutral"
+        },
+        {
+          "text": "It syncs with Google Calendar through the integrations page.",
+          "emotion": "neutral",
+          "ai_emotion": "neutral",
+          "classic_emotion": "joy",
+          "sentiment": "neutral",
+          "roberta": "neutral",
+          "vader": "neutral"
+        },
+        {
+          "text": "Okay app. Does what it says.",
+          "emotion": "neutral",
+          "ai_emotion": "neutral",
+          "classic_emotion": "joy",
+          "sentiment": "neutral",
+          "roberta": "neutral",
+          "vader": "positive"
+        }
+      ]
+    },
+    "in_domain": {
+      "size": 2939,
+      "transformer": 0.9261653623681524,
+      "classic": 0.8877169105137802
+    },
+    "transformer_models": {
+      "emotion": "j-hartmann/emotion-english-distilroberta-base",
+      "sentiment": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+    }
+  }
+}

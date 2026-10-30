@@ -1,0 +1,794 @@
+{
+  "models": "transformer",
+  "sentiment_source": "RoBERTa",
+  "total_reviews": 13695,
+  "apps": 15,
+  "sentiment_counts": {
+    "negative": 5840,
+    "positive": 5737,
+    "neutral": 2118
+  },
+  "emotion_labels": [
+    "anger",
+    "disgust",
+    "fear",
+    "joy",
+    "neutral",
+    "sadness",
+    "surprise"
+  ],
+  "emotion_counts": {
+    "anger": 621,
+    "disgust": 120,
+    "fear": 400,
+    "joy": 3619,
+    "neutral": 3558,
+    "sadness": 3979,
+    "surprise": 1398
+  },
+  "avg_score": 0.0232,
+  "vader_agreement": 0.6264,
+  "per_app": [
+    {
+      "app": "LifeRPG",
+      "reviews": 468,
+      "positive": 285,
+      "neutral": 56,
+      "negative": 127,
+      "avg_score": 0.3152,
+      "avg_compound": 0.4786,
+      "reply_rate": 0.4808,
+      "emotions": {
+        "anger": 25,
+        "disgust": 4,
+        "fear": 9,
+        "joy": 198,
+        "neutral": 98,
+        "sadness": 96,
+        "surprise": 38
+      }
+    },
+    {
+      "app": "Artful Agenda",
+      "reviews": 483,
+      "positive": 289,
+      "neutral": 45,
+      "negative": 149,
+      "avg_score": 0.2805,
+      "avg_compound": 0.4847,
+      "reply_rate": 0.9503,
+      "emotions": {
+        "anger": 19,
+        "disgust": 1,
+        "fear": 12,
+        "joy": 225,
+        "neutral": 79,
+        "sadness": 97,
+        "surprise": 50
+      }
+    },
+    {
+      "app": "Forest",
+      "reviews": 1086,
+      "positive": 523,
+      "neutral": 172,
+      "negative": 391,
+      "avg_score": 0.1247,
+      "avg_compound": 0.3706,
+      "reply_rate": 0.6271,
+      "emotions": {
+        "anger": 61,
+        "disgust": 8,
+        "fear": 41,
+        "joy": 327,
+        "neutral": 258,
+        "sadness": 294,
+        "surprise": 97
+      }
+    },
+    {
+      "app": "HabitNow",
+      "reviews": 907,
+      "positive": 407,
+      "neutral": 190,
+      "negative": 310,
+      "avg_score": 0.1141,
+      "avg_compound": 0.361,
+      "reply_rate": 0.6692,
+      "emotions": {
+        "anger": 21,
+        "disgust": 9,
+        "fear": 29,
+        "joy": 259,
+        "neutral": 270,
+        "sadness": 233,
+        "surprise": 86
+      }
+    },
+    {
+      "app": "Tasks",
+      "reviews": 970,
+      "positive": 437,
+      "neutral": 180,
+      "negative": 353,
+      "avg_score": 0.1053,
+      "avg_compound": 0.3422,
+      "reply_rate": 0.9103,
+      "emotions": {
+        "anger": 31,
+        "disgust": 9,
+        "fear": 36,
+        "joy": 285,
+        "neutral": 288,
+        "sadness": 231,
+        "surprise": 90
+      }
+    },
+    {
+      "app": "CalClock",
+      "reviews": 932,
+      "positive": 411,
+      "neutral": 169,
+      "negative": 352,
+      "avg_score": 0.0726,
+      "avg_compound": 0.3396,
+      "reply_rate": 0.2704,
+      "emotions": {
+        "anger": 22,
+        "disgust": 3,
+        "fear": 25,
+        "joy": 223,
+        "neutral": 278,
+        "sadness": 255,
+        "surprise": 126
+      }
+    },
+    {
+      "app": "TimeTune",
+      "reviews": 909,
+      "positive": 408,
+      "neutral": 116,
+      "negative": 385,
+      "avg_score": 0.0493,
+      "avg_compound": 0.3057,
+      "reply_rate": 0.835,
+      "emotions": {
+        "anger": 31,
+        "disgust": 11,
+        "fear": 35,
+        "joy": 237,
+        "neutral": 246,
+        "sadness": 252,
+        "surprise": 97
+      }
+    },
+    {
+      "app": "Planner Pro",
+      "reviews": 805,
+      "positive": 326,
+      "neutral": 117,
+      "negative": 362,
+      "avg_score": 0.0055,
+      "avg_compound": 0.2953,
+      "reply_rate": 0.1391,
+      "emotions": {
+        "anger": 38,
+        "disgust": 8,
+        "fear": 22,
+        "joy": 206,
+        "neutral": 207,
+        "sadness": 249,
+        "surprise": 75
+      }
+    },
+    {
+      "app": "TickTick",
+      "reviews": 995,
+      "positive": 395,
+      "neutral": 133,
+      "negative": 467,
+      "avg_score": -0.0254,
+      "avg_compound": 0.3186,
+      "reply_rate": 0.1337,
+      "emotions": {
+        "anger": 40,
+        "disgust": 8,
+        "fear": 28,
+        "joy": 214,
+        "neutral": 265,
+        "sadness": 327,
+        "surprise": 113
+      }
+    },
+    {
+      "app": "HabitBull",
+      "reviews": 1005,
+      "positive": 400,
+      "neutral": 145,
+      "negative": 460,
+      "avg_score": -0.0303,
+      "avg_compound": 0.3457,
+      "reply_rate": 0.0,
+      "emotions": {
+        "anger": 42,
+        "disgust": 7,
+        "fear": 14,
+        "joy": 251,
+        "neutral": 259,
+        "sadness": 359,
+        "surprise": 73
+      }
+    },
+    {
+      "app": "Microsoft To Do",
+      "reviews": 1097,
+      "positive": 394,
+      "neutral": 218,
+      "negative": 485,
+      "avg_score": -0.0443,
+      "avg_compound": 0.2857,
+      "reply_rate": 0.0529,
+      "emotions": {
+        "anger": 64,
+        "disgust": 7,
+        "fear": 38,
+        "joy": 225,
+        "neutral": 356,
+        "sadness": 305,
+        "surprise": 102
+      }
+    },
+    {
+      "app": "Habitica",
+      "reviews": 975,
+      "positive": 387,
+      "neutral": 103,
+      "negative": 485,
+      "avg_score": -0.0549,
+      "avg_compound": 0.3485,
+      "reply_rate": 0.9097,
+      "emotions": {
+        "anger": 44,
+        "disgust": 9,
+        "fear": 29,
+        "joy": 304,
+        "neutral": 158,
+        "sadness": 324,
+        "surprise": 107
+      }
+    },
+    {
+      "app": "Any.do",
+      "reviews": 1077,
+      "positive": 385,
+      "neutral": 186,
+      "negative": 506,
+      "avg_score": -0.0724,
+      "avg_compound": 0.2802,
+      "reply_rate": 0.896,
+      "emotions": {
+        "anger": 63,
+        "disgust": 11,
+        "fear": 30,
+        "joy": 236,
+        "neutral": 304,
+        "sadness": 319,
+        "surprise": 114
+      }
+    },
+    {
+      "app": "Todoist",
+      "reviews": 991,
+      "positive": 355,
+      "neutral": 137,
+      "negative": 499,
+      "avg_score": -0.086,
+      "avg_compound": 0.2975,
+      "reply_rate": 0.7094,
+      "emotions": {
+        "anger": 68,
+        "disgust": 14,
+        "fear": 28,
+        "joy": 226,
+        "neutral": 247,
+        "sadness": 301,
+        "surprise": 107
+      }
+    },
+    {
+      "app": "Business Calendar",
+      "reviews": 995,
+      "positive": 335,
+      "neutral": 151,
+      "negative": 509,
+      "avg_score": -0.1025,
+      "avg_compound": 0.263,
+      "reply_rate": 0.6774,
+      "emotions": {
+        "anger": 52,
+        "disgust": 11,
+        "fear": 24,
+        "joy": 203,
+        "neutral": 245,
+        "sadness": 337,
+        "surprise": 123
+      }
+    }
+  ],
+  "trend": [
+    {
+      "month": "2018Q3",
+      "avg_score": -0.0762,
+      "reviews": 60,
+      "negative_share": 0.5333
+    },
+    {
+      "month": "2018Q4",
+      "avg_score": -0.0624,
+      "reviews": 338,
+      "negative_share": 0.497
+    },
+    {
+      "month": "2019Q1",
+      "avg_score": 0.0187,
+      "reviews": 380,
+      "negative_share": 0.4474
+    },
+    {
+      "month": "2019Q2",
+      "avg_score": 0.0655,
+      "reviews": 372,
+      "negative_share": 0.4328
+    },
+    {
+      "month": "2019Q3",
+      "avg_score": -0.0612,
+      "reviews": 374,
+      "negative_share": 0.5
+    },
+    {
+      "month": "2019Q4",
+      "avg_score": -0.129,
+      "reviews": 354,
+      "negative_share": 0.5282
+    },
+    {
+      "month": "2020Q1",
+      "avg_score": -0.175,
+      "reviews": 448,
+      "negative_share": 0.5625
+    },
+    {
+      "month": "2020Q2",
+      "avg_score": -0.0781,
+      "reviews": 542,
+      "negative_share": 0.4871
+    },
+    {
+      "month": "2020Q3",
+      "avg_score": -0.0443,
+      "reviews": 448,
+      "negative_share": 0.4888
+    },
+    {
+      "month": "2020Q4",
+      "avg_score": -0.0902,
+      "reviews": 404,
+      "negative_share": 0.5223
+    },
+    {
+      "month": "2021Q1",
+      "avg_score": -0.0391,
+      "reviews": 398,
+      "negative_share": 0.4698
+    },
+    {
+      "month": "2021Q2",
+      "avg_score": -0.0225,
+      "reviews": 303,
+      "negative_share": 0.4587
+    },
+    {
+      "month": "2021Q3",
+      "avg_score": -0.0529,
+      "reviews": 323,
+      "negative_share": 0.483
+    },
+    {
+      "month": "2021Q4",
+      "avg_score": -0.0221,
+      "reviews": 316,
+      "negative_share": 0.4557
+    },
+    {
+      "month": "2022Q1",
+      "avg_score": -0.0218,
+      "reviews": 332,
+      "negative_share": 0.4548
+    },
+    {
+      "month": "2022Q2",
+      "avg_score": -0.057,
+      "reviews": 317,
+      "negative_share": 0.4858
+    },
+    {
+      "month": "2022Q3",
+      "avg_score": -0.0579,
+      "reviews": 413,
+      "negative_share": 0.4867
+    },
+    {
+      "month": "2022Q4",
+      "avg_score": -0.0337,
+      "reviews": 576,
+      "negative_share": 0.441
+    },
+    {
+      "month": "2023Q1",
+      "avg_score": -0.0759,
+      "reviews": 683,
+      "negative_share": 0.4729
+    },
+    {
+      "month": "2023Q2",
+      "avg_score": -0.0478,
+      "reviews": 554,
+      "negative_share": 0.4422
+    },
+    {
+      "month": "2023Q3",
+      "avg_score": -0.052,
+      "reviews": 989,
+      "negative_share": 0.459
+    },
+    {
+      "month": "2023Q4",
+      "avg_score": 0.0154,
+      "reviews": 1407,
+      "negative_share": 0.4136
+    },
+    {
+      "month": "2024Q1",
+      "avg_score": 0.2055,
+      "reviews": 2593,
+      "negative_share": 0.3093
+    },
+    {
+      "month": "2024Q2",
+      "avg_score": 0.5107,
+      "reviews": 603,
+      "negative_share": 0.1542
+    }
+  ],
+  "top_words": {
+    "all": [
+      {
+        "word": "tasks",
+        "count": 2941
+      },
+      {
+        "word": "time",
+        "count": 2612
+      },
+      {
+        "word": "calendar",
+        "count": 2213
+      },
+      {
+        "word": "great",
+        "count": 2159
+      },
+      {
+        "word": "task",
+        "count": 2063
+      },
+      {
+        "word": "good",
+        "count": 2015
+      },
+      {
+        "word": "list",
+        "count": 1907
+      },
+      {
+        "word": "love",
+        "count": 1901
+      },
+      {
+        "word": "day",
+        "count": 1820
+      },
+      {
+        "word": "work",
+        "count": 1564
+      },
+      {
+        "word": "version",
+        "count": 1520
+      },
+      {
+        "word": "add",
+        "count": 1413
+      },
+      {
+        "word": "phone",
+        "count": 1336
+      },
+      {
+        "word": "doesnt",
+        "count": 1299
+      },
+      {
+        "word": "need",
+        "count": 1255
+      },
+      {
+        "word": "want",
+        "count": 1240
+      },
+      {
+        "word": "google",
+        "count": 1149
+      },
+      {
+        "word": "set",
+        "count": 1137
+      },
+      {
+        "word": "see",
+        "count": 1135
+      },
+      {
+        "word": "features",
+        "count": 1124
+      },
+      {
+        "word": "premium",
+        "count": 1123
+      },
+      {
+        "word": "apps",
+        "count": 1081
+      },
+      {
+        "word": "free",
+        "count": 1063
+      },
+      {
+        "word": "widget",
+        "count": 1052
+      },
+      {
+        "word": "feature",
+        "count": 1000
+      }
+    ],
+    "positive": [
+      {
+        "word": "love",
+        "count": 1540
+      },
+      {
+        "word": "great",
+        "count": 1460
+      },
+      {
+        "word": "tasks",
+        "count": 1407
+      },
+      {
+        "word": "good",
+        "count": 1151
+      },
+      {
+        "word": "time",
+        "count": 1083
+      },
+      {
+        "word": "calendar",
+        "count": 968
+      },
+      {
+        "word": "task",
+        "count": 825
+      },
+      {
+        "word": "day",
+        "count": 810
+      },
+      {
+        "word": "list",
+        "count": 801
+      },
+      {
+        "word": "easy",
+        "count": 690
+      },
+      {
+        "word": "version",
+        "count": 655
+      },
+      {
+        "word": "add",
+        "count": 645
+      },
+      {
+        "word": "features",
+        "count": 614
+      },
+      {
+        "word": "best",
+        "count": 582
+      },
+      {
+        "word": "need",
+        "count": 572
+      },
+      {
+        "word": "apps",
+        "count": 570
+      },
+      {
+        "word": "work",
+        "count": 557
+      },
+      {
+        "word": "see",
+        "count": 547
+      },
+      {
+        "word": "well",
+        "count": 522
+      },
+      {
+        "word": "things",
+        "count": 521
+      },
+      {
+        "word": "want",
+        "count": 504
+      },
+      {
+        "word": "lists",
+        "count": 503
+      },
+      {
+        "word": "keep",
+        "count": 502
+      },
+      {
+        "word": "nice",
+        "count": 498
+      },
+      {
+        "word": "phone",
+        "count": 486
+      }
+    ],
+    "negative": [
+      {
+        "word": "time",
+        "count": 1209
+      },
+      {
+        "word": "tasks",
+        "count": 1191
+      },
+      {
+        "word": "calendar",
+        "count": 950
+      },
+      {
+        "word": "task",
+        "count": 946
+      },
+      {
+        "word": "doesnt",
+        "count": 928
+      },
+      {
+        "word": "work",
+        "count": 863
+      },
+      {
+        "word": "list",
+        "count": 850
+      },
+      {
+        "word": "day",
+        "count": 765
+      },
+      {
+        "word": "phone",
+        "count": 703
+      },
+      {
+        "word": "version",
+        "count": 694
+      },
+      {
+        "word": "good",
+        "count": 691
+      },
+      {
+        "word": "update",
+        "count": 605
+      },
+      {
+        "word": "great",
+        "count": 604
+      },
+      {
+        "word": "google",
+        "count": 570
+      },
+      {
+        "word": "premium",
+        "count": 566
+      },
+      {
+        "word": "want",
+        "count": 564
+      },
+      {
+        "word": "add",
+        "count": 543
+      },
+      {
+        "word": "set",
+        "count": 522
+      },
+      {
+        "word": "new",
+        "count": 509
+      },
+      {
+        "word": "need",
+        "count": 505
+      },
+      {
+        "word": "still",
+        "count": 499
+      },
+      {
+        "word": "notifications",
+        "count": 496
+      },
+      {
+        "word": "back",
+        "count": 469
+      },
+      {
+        "word": "sync",
+        "count": 467
+      },
+      {
+        "word": "every",
+        "count": 459
+      }
+    ]
+  },
+  "score_histogram": [
+    644,
+    1829,
+    1223,
+    807,
+    568,
+    431,
+    419,
+    344,
+    356,
+    414,
+    422,
+    301,
+    291,
+    251,
+    264,
+    407,
+    412,
+    522,
+    1080,
+    2710
+  ]
+}
